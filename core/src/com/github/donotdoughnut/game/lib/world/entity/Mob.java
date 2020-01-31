@@ -8,9 +8,11 @@ import com.github.donotdoughnut.game.lib.world.level.Level;
 public abstract class Mob extends Entity {
 
 	protected Hitbox hitbox;
+	protected Texture texture;
 
 	public Mob(Level level, Texture texture, Hitbox hitbox, float x, float y, int layer) {
 		super(level, x, y, layer);
+		this.texture = texture;
 		this.hitbox = new Hitbox(this, texture.getWidth(), texture.getHeight());
 	}
 

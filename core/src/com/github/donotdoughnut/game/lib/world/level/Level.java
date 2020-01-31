@@ -10,9 +10,11 @@ import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.github.donotdoughnut.game.lib.world.entity.Entity;
 import com.github.donotdoughnut.game.lib.world.tile.Tile;
 
-public abstract class Level {
+public class Level {
 
 	protected ArrayList<Entity> entities;
+	
+	protected SpriteBatch batch;
 	
 	public TiledMap tiledMap;
 	
@@ -23,7 +25,7 @@ public abstract class Level {
 		tiledMap = new TmxMapLoader().load("levels/"+path);
 	}
 	
-	public void render(SpriteBatch batch) {
+	public void render() {
 		for (Entity entity : entities) {
 			entity.render(batch);
 		}
@@ -35,19 +37,28 @@ public abstract class Level {
 		}
 	}
 	
-	public abstract void close();
+	public void close() {
+		
+	}
 	
 	public void dispose () {
 		tiledMap.dispose();
 	}
 	
 	public Tile getTileTypeByCoordinate(int layer, int col, int row) {
+		return null;
 		
 	}
 	
-	public abstract int getWidth();
-	public abstract int getHeight();
-	public abstract int getLayers();
+	public int getWidth() {
+		return 0;
+	}
+	public int getHeight() {
+		return 0;
+	}
+	public int getLayers() {
+		return tiledMap.getLayers().getCount();
+	}
 	
 	public int getPixelWidth() {
 		return this.getWidth() * Tile.SIZE;

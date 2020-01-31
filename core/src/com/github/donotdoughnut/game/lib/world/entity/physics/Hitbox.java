@@ -1,6 +1,5 @@
 package com.github.donotdoughnut.game.lib.world.entity.physics;
 
-import com.badlogic.gdx.math.Vector2;
 import com.github.donotdoughnut.game.lib.world.entity.Mob;
 import com.github.donotdoughnut.game.lib.world.tile.Tile;
 
@@ -32,6 +31,26 @@ public class Hitbox {
 		return false;
 	}
 	
+	
+	public boolean collisionBottom(float xOffset, float yOffset) {
+		return false;
+		//for()
+	}
+	
+	public boolean collisionRight(float xOffset, float yOffset) {
+		return false;
+		
+	}
+	
+	public boolean collisionTop(float xOffset, float yOffset) {
+		return false;
+		
+	}
+	
+	public boolean collisionLeft(float xOffset, float yOffset) {
+		return false;
+		
+	}
 	
 	
 	public int getWidth() {
